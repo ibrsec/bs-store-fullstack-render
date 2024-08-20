@@ -1,0 +1,222 @@
+{
+  "definition": {
+    "openapi": "3.0.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "BS Store FS APP",
+      "description": "Backend and frontend for a BS Store",
+      "termsOfService": "http://www.ibrsec.com",
+      "contact": {
+        "name": "ibrsec",
+        "email": "ibr.seckin@gmail.com"
+      }
+    },
+    "license": {
+      "name": "ISC Licence"
+    },
+    "servers": [
+      {
+        "url": "https://bs-store-backend.vercel.app/"
+      }
+    ],
+    "components": {
+      "schemas": {
+        "Product": {
+          "type": "object",
+          "required": [
+            "category",
+            "title",
+            "description",
+            "price",
+            "brand",
+            "thumbnail"
+          ],
+          "properties": {
+            "category": {
+              "type": "object",
+              "description": "category id of the product.",
+              "example": "66979ace407c0200194cd6e1",
+              "ref": "Category"
+            },
+            "title": {
+              "type": "string",
+              "description": "Name of the product.",
+              "example": "TV",
+              "maxLength": 50
+            },
+            "description": {
+              "type": "string",
+              "description": "Description  of the product.",
+              "example": "Description the TV product",
+              "maxLength": 500
+            },
+            "price": {
+              "type": "number",
+              "description": "Price of the product",
+              "example": 600,
+              "minimum": 0,
+              "maximum": 10000000
+            },
+            "discountPercentage": {
+              "type": "number",
+              "description": "discountPercentage of the product",
+              "example": 20,
+              "minimum": 0,
+              "maximum": 100,
+              "defaultValue": 0
+            },
+            "rating": {
+              "type": "number",
+              "description": "rating of the product",
+              "example": 70,
+              "minimum": 0,
+              "maximum": 10,
+              "defaultValue": 3
+            },
+            "stock": {
+              "type": "number",
+              "description": "stock of the product",
+              "example": 150,
+              "minimum": 0,
+              "maximum": 1000000,
+              "defaultValue": 0
+            },
+            "brand": {
+              "type": "string",
+              "description": "brand of the product",
+              "example": "LG",
+              "maxLength": 50
+            },
+            "thumbnail": {
+              "type": "string",
+              "description": "thumbnail of the product - should start with 'http:// or https://",
+              "example": "LG",
+              "maxLength": 1000
+            },
+            "images": {
+              "type": "array",
+              "maxItems": 10,
+              "items": {
+                "type": "string",
+                "maxLength": 1000,
+                "description": "Image URLs of the product",
+                "example": "https://example.com/image1.jpg"
+              },
+              "description": "Array of image URLs for the product"
+            }
+          }
+        },
+        "Category": {
+          "type": "object",
+          "required": ["name"],
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the category.",
+              "unique": true,
+              "example": "Techonology",
+              "maxLength": 50
+            }
+          }
+        },
+        "User": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "description": "The email address of the user.",
+              "maxLength": 70,
+              "example": "john.doe@example.com",
+              "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+            },
+            "password": {
+              "type": "string",
+              "description": "The password of the user. Must contain at least one uppercase letter, one lowercase letter, one number, and one special character. Length should be between 8 and 16 characters.",
+              "example": "Password1!",
+              "minLength": 8,
+              "maxLength": 16,
+              "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,16}$"
+            }
+          },
+          "required": ["email", "password"]
+        },
+        "ResponseListDetails": {
+          "type": "object",
+          "properties": {
+            "filter": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "search": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "sort": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "limit": {
+              "type": "integer",
+              "example": 10
+            },
+            "skip": {
+              "type": "integer",
+              "example": 0
+            },
+            "page": {
+              "type": "integer",
+              "example": 1
+            },
+            "pages": {
+              "type": "object",
+              "properties": {
+                "previous": {
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 1
+                },
+                "current": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "next": {
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 2
+                },
+                "totalPage": {
+                  "type": "integer",
+                  "example": 10
+                }
+              }
+            },
+            "totalrecords": {
+              "type": "integer",
+              "example": 100
+            }
+          }
+        }
+      },
+      "securitySchemes": {
+        "BearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT",
+          "description": "JWT Authorization header using the Bearer scheme."
+        }
+      }
+    },
+    "security": [
+      {
+        "BearerAuth": []
+      }
+    ]
+  },
+  "apis": ["./src/controllers/*.js"]
+}
