@@ -1,4 +1,3 @@
-
 <a name="readme-top"></a>
  
  
@@ -6,26 +5,22 @@
 <br />
 <div align="center">
    
-  <a href="https://github.com/ibrsec/bs-store-frontend/">
+  <a href="https://bs-store-fullstack-render.onrender.com">
     <img src="./public/logo.png" alt="Logo" width="250"   >
   </a>
 
-  <h3 align="center">BS Store FrontEnd | Fullstack</h3>
+  <h3 align="center">Front end of the Full stack Stock App</h3>
 
   <p align="center">
-    An awesome frontend of the BS Store fullstack application
-    <a href="https://github.com/ibrsec/bs-store-frontend"><strong>Explore the docs »</strong></a>
+    An awesome Stock App
+    <!-- <a href="https://github.com/ibrsec/stock-app"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
-    <a href="https://bs-store-frontend.vercel.app">Live Link</a>
+    <a href="https://bs-store-fullstack-render.onrender.com/">View Demo</a>
     ·
-    <a href="https://github.com/ibrsec/bs-store-backend">Backend Repo</a>
+    <a href="https://github.com/ibrsec/bs-store-fullstack-render/issues">Report Bug</a>
     ·
-    <a href="https://bs-store-backend.vercel.app/api-doc/">Backend Swagger</a>
-    ·
-    <a href="https://github.com/ibrsec/bs-store-frontend/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/ibrsec/bs-store-frontend/issues">Request Feature</a>
+    <a href="https://github.com/ibrsec/bs-store-fullstack-render/issues">Request Feature</a>
   </p>
 </div>
 
@@ -69,7 +64,7 @@
 <a name="about-the-project"></a>
 ## ℹ️ About The Project
 
-[![bs-store-frontend](./public/project.gif)](https://bs-store-frontend-nextjs.vercel.app/)
+[![stock-app](./public/project.gif)](https://bs-store-fullstack-render.onrender.com/)
 
 
 
@@ -92,17 +87,25 @@
 <a name="overview"></a>
 ## 👀 Overview
 
-📦 Used   <a href="https://github.com/ibrsec/bs-store-backend">bs-store-backend</a>  for store store data </br>
-🎯 Used react environment, redux toolkit, redux-persist,react-router-dom, materal ,axios, react-toastify, jwt token athentication,  </br>
-🖥 User can Register or login with the ready credentials on the login page, Contents can be accessed after logged in! </br>
-🔩 Crud operations of the PRoducts and categories are accessible to a admin </br>
-🖥 Bou can find the admin creds ready on login page!</br>
-💪 Normal users can only list the products</br>
-🌱 Admin user can list create update and delete the products and categories of the products</br>
- <!-- 🐞 ---  </br> -->
-<!-- 🏀 --- </br> -->
-<!-- 🌱  ---</br>   -->
-</br>
+📦 Frontend of the my [bs-store-fullstack-render](https://github.com/ibrsec/bs-store-fullstack-render) project </br>
+FRONTEND:
+
+<b>🎯 React Development:</b> Built a responsive frontend using React.js, ensuring a seamless user experience.</br>
+
+<b>🛠 State Management:</b> Managed application state with Redux Toolkit and Redux Persist, providing consistent state management across sessions.</br>
+
+<b>🚀 Routing:</b> Integrated React Router DOM for smooth navigation between key pages like login, product listings, and admin dashboard.</br>
+
+<b>🔒 Authentication:</b> Implemented JWT token authentication for secure user login and access control.</br>
+
+<b>🔩 CRUD Operations:</b> Enabled full CRUD operations for products and categories, accessible to admin users only.</br>
+
+<b>🔔 User Notifications:</b> Integrated React Toastify for real-time feedback on user actions such as login, registration, and CRUD operations.</br>
+
+<b>💪 User Roles:</b> Normal users can only list products, while admin users have full access to create, update, and delete products and categories.</br>
+
+<b>🌱 Admin Access:</b> Admin credentials are pre-populated on the login page for easy access to administrative functions.</br></br>
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -113,16 +116,20 @@
 
 ```sh
 # clone the project
-git clone https://github.com/ibrsec/bs-store-frontend.git
+git clone https://github.com/ibrsec/bs-store-fullstack-render.git
 
 # enter the project directory
-cd bs-store-frontend
+cd bs-store-fullstack-render
 
 # install dependency
-npm install || yarn install
+# linux
+npm run setup-production
+# windows
+npm run setup-production-windows
 
-# develop
-npm run dev || yarn start
+# run
+node index.js
+
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -130,7 +137,7 @@ npm run dev || yarn start
 
 <!-- ## 🐞 Debug
 
-![bs-store-frontend.gif](/bs-store-frontend.gif) -->
+![stock-app.gif](/stock-app.gif) -->
 
 
 
@@ -169,7 +176,6 @@ npm run dev || yarn start
       |----.env
       └----readme.md 
 ```
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
