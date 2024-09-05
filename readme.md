@@ -20,7 +20,7 @@
     ·
     <a href="https://github.com/ibrsec/bs-store-fullstack-render/tree/main/client">Frontend Repo</a>
     ·
-    <a href="https://bs-store-backend.vercel.app/api-doc/">Backend Swagger</a>
+    <a href="https://bs-store-fullstack-render.onrender.com/api/v1/api-doc/">Backend Swagger</a>
     <!-- ·
     <a href="https://bs-store-fullstack-render.onrender.com/api/v1/documents/redoc">Backend Redoc</a> -->
     ·
@@ -70,7 +70,7 @@
 <a name="about-the-project"></a>
 ## ℹ️ About The Project
 
-[![stock-app](./client/public/project.gif)](https://bs-store-fullstack-render.onrender.com/)
+[![bs-store-app](./client/public/project.gif)](https://bs-store-fullstack-render.onrender.com/)
 <!-- ---
 <b>ERD:</b>
 [![stock-app-erd](./erdStockAPI.png)](https://bs-store-fullstack-render.onrender.com/) -->
